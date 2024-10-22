@@ -26,7 +26,9 @@ export class CursosListaComponent implements OnInit {
   constructor(
     private modalService: BsModalService,
     private service: CursosService,
-    private alertService: AlertModalService
+    private alertService: AlertModalService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -68,4 +70,8 @@ export class CursosListaComponent implements OnInit {
     // this.bsModalRef.content.type = 'danger';
     // this.bsModalRef.content.message = 'Erro ao carregar cursos. Tente novamente mais tarde.';
   }
+
+  onEdit(id: any) {
+    this.router.navigate(['editar', id], { relativeTo: this.route })
+   }
 }

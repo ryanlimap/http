@@ -23,6 +23,22 @@
     {
       "id": "1d9e",
       "nome": "JavaScript"
+    },
+    {
+      "id": "7a2b",
+      "nome": "Java"
+    },
+    {
+      "id": "9367",
+      "nome": "Lua"
+    },
+    {
+      "id": "7a2b",
+      "nome": "Ruby"
+    },
+    {
+      "id": "7a2b",
+      "nome": "C++"
     }
   ]
 }

@@ -23,8 +23,8 @@
             <td>{{ curso.nome }}</td>
             <td>
               <span class="float-right">
-                <button class="btn btn-outline-warning mb-1 btn-sm">
-                  Atualizar
+                <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(curso.id)">
+                  Atualiza
                 </button>
   
                 <button class="btn btn-outline-danger mb-1 btn-sm">
