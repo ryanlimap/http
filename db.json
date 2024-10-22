@@ -1,0 +1,28 @@
+{
+  "cursos": [
+    {
+      "id": "1",
+      "nome": "Angular"
+    },
+    {
+      "nome": "Java",
+      "id": "2"
+    },
+    {
+      "id": "e374",
+      "nome": "PHP"
+    },
+    {
+      "id": "8fa3",
+      "nome": "Python"
+    },
+    {
+      "id": "4081",
+      "nome": "Blade"
+    },
+    {
+      "id": "1d9e",
+      "nome": "JavaScript"
+    }
+  ]
+}
