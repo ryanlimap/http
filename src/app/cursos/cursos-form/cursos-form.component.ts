@@ -5,6 +5,7 @@ import { AlertModalService } from '../../shared/alert-modal.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
+import { Cursos2Service } from '../cursos2.service';
 
 @Component({
   selector: 'app-cursos-form',
@@ -17,7 +18,7 @@ export class CursosFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private service: CursosService,
+    private service: Cursos2Service,
     private modal: AlertModalService,
     private location: Location,
     private route: ActivatedRoute
@@ -79,15 +80,45 @@ export class CursosFormComponent {
     console.log(this.form.value);
     if (this.form.valid) {
       console.log('submit');
-      this.service.create(this.form.value).subscribe(
-        (sucess) => {
-          this.modal.showAlertSucess('Curso criado com sucesso!');
-          this.location.back();
+
+      let msgSuccess = 'Curso criado com sucesso!';
+      let msgError = 'Erro ao criar curso, tente novamente!';
+      if (this.form.value.id) {
+        msgSuccess = 'Curso atualizado com sucesso!';
+        msgError = 'Erro ao atualizar curso, tente novamente!';
+      }
+
+      this.service.save(this.form.value).subscribe(
+        success => {
+          this.modal.showAlertSuccess(msgSuccess);
+            this.location.back();
         },
-        (error) =>
-          this.modal.showAlertDanger('Erro ao criar curso, tente novamente.'),
-        () => console.log('request complete!')
-      );
+        error => this.modal.showAlertDanger(msgError)
+      ); 
+      
+
+      // if (this.form.value.id) {
+      //   // update
+      //   this.service.update(this.form.value).subscribe(
+      //     (sucess) => {
+      //       this.modal.showAlertSucess('Curso atualizado com sucesso!');
+      //       this.location.back();
+      //     },
+      //     (error) =>
+      //       this.modal.showAlertDanger('Erro ao atualizar curso, tente novamente.'),
+      //     () => console.log('update complete!')
+      //   )
+      // } else {
+      //   this.service.create(this.form.value).subscribe(
+      //     (sucess) => {
+      //       this.modal.showAlertSucess('Curso criado com sucesso!');
+      //       this.location.back();
+      //     },
+      //     (error) =>
+      //       this.modal.showAlertDanger('Erro ao criar curso, tente novamente.'),
+      //     () => console.log('create complete!')
+      //   );
+      // }
     }
   }
 

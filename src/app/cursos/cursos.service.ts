@@ -25,10 +25,32 @@ export class CursosService {
     return this.http.get<Curso>(`${this.API}/${id}`).pipe(take(1));
   }
 
-  create(curso: any) {
+  private create(curso: any) {
     return this.http.post(this.API,curso)
     .pipe(
+        tap(curso => console.log(curso)),
         take(1)
     );
   }
+
+  private update(curso: any) {
+    return this.http.put(`${this.API}/${curso.id}`, curso).pipe(take(1))
+  }
+
+  save(curso: any) {  
+    console.log(curso)
+    if (curso.id) {
+      return this.update(curso)
+    }
+    
+    //gambiarra do pai
+    const semId = curso;
+    delete semId.id;
+
+    return this.create(curso)
+  }
+
+  remove(id: any) { 
+    return this.http.delete(`${this.API}/${id}`, id).pipe(take(1));
+   }
 }

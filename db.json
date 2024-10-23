@@ -1,44 +1,12 @@
 {
   "cursos": [
     {
-      "id": "1",
-      "nome": "Angular"
-    },
-    {
-      "nome": "Java",
-      "id": "2"
-    },
-    {
-      "id": "e374",
-      "nome": "PHP"
-    },
-    {
-      "id": "8fa3",
+      "id": "b69c",
       "nome": "Python"
     },
     {
-      "id": "4081",
-      "nome": "Blade"
-    },
-    {
-      "id": "1d9e",
-      "nome": "JavaScript"
-    },
-    {
-      "id": "7a2b",
-      "nome": "Java"
-    },
-    {
-      "id": "9367",
-      "nome": "Lua"
-    },
-    {
-      "id": "7a2b",
-      "nome": "Ruby"
-    },
-    {
-      "id": "7a2b",
-      "nome": "C++"
+      "id": "e3a8",
+      "nome": "Angular"
     }
   ]
 }

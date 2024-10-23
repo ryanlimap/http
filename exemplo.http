@@ -2,7 +2,7 @@ http://localhost:3000/cursos
 
 ###
 
-GET http://localhost:3000/cursos/1
+GET http://localhost:3000/cursos/2
 
 ###
 
@@ -15,13 +15,14 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:3000/cursos/2 HTTP/1.1
+PUT http://localhost:3000/cursos/1 HTTP/1.1
 content-type: application/json
 
 {
-    "nome": "Java OO"
+    "id": 1,
+    "nome": "Java"
 }
 
 ###
 
-DELETE http://localhost:3000/cursos/2
+DELETE http://localhost:3000/cursos/9611
